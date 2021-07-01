@@ -22,26 +22,26 @@ class Modelo_prophet_semanal:
         treino : dataset destinado aos dados de treino
         teste : dataset destinado aos dados de teste
         modelo : modelo do tipo fbprophet.Prophet
-    Definido pela função preve:
-    --------------------------
         previsao : previsao do modelo sobre dados de treino e teste
-    
-    Definido pela função c_valid:
-    ----------------------------
+        
+    Definido pela função c_valid():
+    ------------------------------
         cross : DataFrame com os dados da validação cruzada
+    
+    Definido pela função metricas():
+    -------------------------------
+        metricas : Dataframe com as métricas da validação cruzada 
     
     Funções:
     -------
-    __init__() : construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
-    treina() : função que utiliza os dados de treino para treinar o modelo
-    preve() : utiliza os dados de treino e teste para realizar a previsao
+    __init__() : construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto, adiciona os regressores, treina o modelo e faz a previsao para todos os dados
     c_valid() : realiza a validação cruzada do modelo através da função fbprophet.diagnostics.cross_validation
     metricas() : calcula as métricas da validação cruzada através da função fbprophet.diagnostics.performance_metrics
     plota() : função que plota a previsão com os dados de treino e teste
     plot_cross_validation() : chama a função plot_cross_validation_metric do fbprophet.plot
     '''
     
-    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=True, pais:str='BR',**kwargs_model):
+    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=True, pais:str='BR', regressors=[], **kwargs_model):
         '''
         Construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
         
@@ -55,25 +55,20 @@ class Modelo_prophet_semanal:
         self.treino = dados[:len(dados) - teste_periodo]
         self.teste = dados[len(dados) - teste_periodo:]
         self.modelo = Prophet(daily_seasonality=False, yearly_seasonality=False, **kwargs_model)
+        
         if holiday == True:
             self.modelo.add_country_holidays(country_name=pais)
-    
-    def treina(self):
-        '''
-        Função responsável de treinar o modelo através da função fit do modelo
-        '''
+            
+        for regressor in regressors:
+            if regressor not in dados.columns:
+                raise ValueError('A coluna passada como regressor não foi encontrada nos dados passados')
+            self.modelo.add_regressor(regressor)
+            
         self.modelo.fit(self.treino)
         
-    def preve(self):
-        '''
-        Função responsável de prever os dados de treino e teste
-        '''
-        future = pd.DataFrame()
-        for nome, column in self.treino.append(self.teste).items():
-            if nome != 'y':
-                future = pd.concat((future, column), axis=1)    
-        self.previsao = self.modelo.predict(future)
-
+        dados_prever = dados.drop(columns='y')
+        self.previsao = self.modelo.predict(dados_prever)
+        
     def c_valid(self, **kwargs_cross_validation):
         '''
         Função responsável por realizar a validação cruzada

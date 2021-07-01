@@ -22,26 +22,26 @@ class Modelo_prophet_semanal:
         treino : dataset destinado aos dados de treino
         teste : dataset destinado aos dados de teste
         modelo : modelo do tipo fbprophet.Prophet
-    Definido pela função preve:
-    --------------------------
         previsao : previsao do modelo sobre dados de treino e teste
-    
-    Definido pela função c_valid:
-    ----------------------------
+        
+    Definido pela função c_valid():
+    ------------------------------
         cross : DataFrame com os dados da validação cruzada
+    
+    Definido pela função metricas():
+    -------------------------------
+        metricas : Dataframe com as métricas da validação cruzada 
     
     Funções:
     -------
-    __init__() : construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
-    treina() : função que utiliza os dados de treino para treinar o modelo
-    preve() : utiliza os dados de treino e teste para realizar a previsao
+    __init__() : construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto, adiciona os regressores, treina o modelo e faz a previsao para todos os dados
     c_valid() : realiza a validação cruzada do modelo através da função fbprophet.diagnostics.cross_validation
     metricas() : calcula as métricas da validação cruzada através da função fbprophet.diagnostics.performance_metrics
     plota() : função que plota a previsão com os dados de treino e teste
     plot_cross_validation() : chama a função plot_cross_validation_metric do fbprophet.plot
     '''
     
-    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=True, pais:str='BR',**kwargs_model):
+    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=True, pais:str='BR', regressors=[], **kwargs_model):
         '''
         Construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
         
@@ -55,25 +55,20 @@ class Modelo_prophet_semanal:
         self.treino = dados[:len(dados) - teste_periodo]
         self.teste = dados[len(dados) - teste_periodo:]
         self.modelo = Prophet(daily_seasonality=False, yearly_seasonality=False, **kwargs_model)
+        
         if holiday == True:
             self.modelo.add_country_holidays(country_name=pais)
-    
-    def treina(self):
-        '''
-        Função responsável de treinar o modelo através da função fit do modelo
-        '''
+            
+        for regressor in regressors:
+            if regressor not in dados.columns:
+                raise ValueError('A coluna passada como regressor não foi encontrada nos dados passados')
+            self.modelo.add_regressor(regressor)
+            
         self.modelo.fit(self.treino)
         
-    def preve(self):
-        '''
-        Função responsável de prever os dados de treino e teste
-        '''
-        future = pd.DataFrame()
-        for nome, column in self.treino.append(self.teste).items():
-            if nome != 'y':
-                future = pd.concat((future, column), axis=1)    
-        self.previsao = self.modelo.predict(future)
-
+        dados_prever = dados.drop(columns='y')
+        self.previsao = self.modelo.predict(dados_prever)
+        
     def c_valid(self, **kwargs_cross_validation):
         '''
         Função responsável por realizar a validação cruzada
@@ -102,7 +97,7 @@ class Modelo_prophet_semanal:
             self.metricas['diff_rmse_mae'] = abs(self.metricas['rmse'] - self.metricas['mae'])
     
     def plota(self, title:str='', subtitle:str='', xlabel:str='', ylabel:str='', 
-              teste:bool=True, changepoint:bool=False, ax=None, show:bool=False,
+              teste:bool=True, ax=None, show:bool=False,
               month_freq:int=2, kwargs_modeloplot:dict={}, 
               kwargs_testeplot:dict={'marker':'.', 'color':'red', 'linestyle':'', 'markersize':8}):
         '''
@@ -115,12 +110,16 @@ class Modelo_prophet_semanal:
         xlabel : rótulo do eixo x, tipo : str, padrão : ''
         ylabel : rótulo do eixo y, tipo : str, padrão : ''
         teste : valor lógico para decidir se os dados de teste serão plotados no gráfico, tipo : bool, padrão : True
-        changepoint : 
         show : valor lógico para mostrar ou não mostrar o gráfico, tipo : bool, padrão : False
         ax : eixo a ser plotado o gráfico, se nenhum for passado será criado automaticamnete, tipo : matplotlib.axes, padrão : None
         month_freq : inteiro correspondente ao intervalo entre os meses a serem plotados no eixo x, tipo : int, padrão : 2
-        kwargs_modeloplot :
-        kwargs_testeplot : 
+        kwargs_modeloplot : dicionário com os argumentos para serem passados pra função fbprophet.Prophet.plot, tipo : dict, padrão : {}
+        kwargs_testeplot : dicionário com os argumentos para serem passados pra função seaborn.lineplot, tipo : dict, padrão :{'marker':'.', 'color':'red', 'linestyle':'', 'markersize':8} 
+        
+        Retorno:
+        -------
+        Retorna o eixo onde o gráfico foi criado
+        OBS : se o argumento show for passado igual a True não retorna nada 
         '''
         if ax is None:
             fig, ax = plt.subplots(figsize=(20,10))
@@ -145,9 +144,6 @@ class Modelo_prophet_semanal:
             plt.yticks(fontsize=15, color='#333333')
             plt.grid(axis='y', alpha=0.6)
             
-        if changepoint is True:
-            change = add_changepoints_to_plot(ax, self.modelo, self.previsao)
-    
         if show is True:
             plt.show()
             
