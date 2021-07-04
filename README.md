@@ -85,11 +85,17 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 
 * A média móvel de 7 dias de casos por dia em 2021 ultrapassou o pico de casos em 2020
 * A média móvel de 7 dias de óbitos por dia em 2021 ultrapassou o pico de óbitos em 2020
-* Nos finais de semana os casos notificados são menores do que no meio da semana
+* Existe uma sazonalidade semanal na notificação de casos novos
 * Existe uma correlação entre o número de óbitos no dia e o número de casos em dias anteriores
 
 # Modelo
-O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada para 
+O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada especificamente para previsão de séries temporais.
 
 # Conclusões
 
+A partir das análises dos dados foi possível concluir:
+
+* Em 2021, a média móvel de óbitos conseguiu superar o pico de mortes de 2020 em diversos momentos
+* Em 2021, a média móvel de casos novos também conseguiu superar o pico de casos novos de 2020
+* Existe uma sazonalidade semanal na notificação dos casos, em que no Domingo e na Segunda esses números costumam cair
+* Existe uma correlação entre os óbitos e os casos nos dias anteriores, principalmente nos mesmos dias da semana uma semana antes
