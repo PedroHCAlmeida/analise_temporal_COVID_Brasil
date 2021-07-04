@@ -58,13 +58,16 @@ Esse notebook foi destinado à limpeza dos dados brutos a fim de agrupar os dado
 * letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 #### [Análise Final]():
+Nesse notebook teve como objetivo a análise dos dados de casos e óbitos por COVID-19 no Brasil inteiro e tentar encontrar padrões nesses dados ao longo do tempo.
 
 #### [model.py]():
+Nesse arquivo python está o código do modelo utilizado no notebook da análise final. 
 
 #### [plot.py]():
+Nesse arquivo python está o código das funções que tem como objetivo a geração de visualizar os dados.
 
 #### [requirements.txt](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/requirements.txt):
-
+Nesse arquivo .txt estão as versões de todas as bibliotecas que foram utilizadas no projeto.
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
 Pasta destinada às imagens utilizadas no projeto.
