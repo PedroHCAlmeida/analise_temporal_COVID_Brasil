@@ -47,6 +47,12 @@ Nesta pasta está o arquivo .csv com os dados na forma que serão utilizados na 
 * letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 ## [Notebooks](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/notebooks):
+Nesta pasta se encontram os notebooks desenvolvidos no jupyter:
+
+#### [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb):
+
+#### [Análise Final]():
+
 
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
