@@ -89,6 +89,7 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 * Existe uma correlação entre o número de óbitos no dia e o número de casos em dias anteriores
 
 # Modelo
+O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada para 
 
 # Conclusões
 
