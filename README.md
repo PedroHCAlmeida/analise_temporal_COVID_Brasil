@@ -1,6 +1,5 @@
 # Análise Temporal COVID-19 Brasil
-[![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat-square&logo=Jupyter)](https://jupyter.org/try) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)](https://github.com/PedroHCAlmeida/projeto_um_mal_silencioso/edit/main/LICENSE)
-![Alt text](https://veja.abril.com.br/wp-content/uploads/2017/02/hepatite-c-virus-ilustracao.jpg)
+[![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat-square&logo=Jupyter)](https://jupyter.org/try) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/edit/main/LICENSE)
 ![Alt](img/unnamed.jpg)
 
 # Introdução 📜
