@@ -1,4 +1,5 @@
 # Análise Temporal COVID-19 Brasil
+[![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat-square&logo=Jupyter)](https://jupyter.org/try) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/edit/main/LICENSE)
 
 ![Alt](img/unnamed.jpg)
 
@@ -85,11 +86,22 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 
 * A média móvel de 7 dias de casos por dia em 2021 ultrapassou o pico de casos em 2020
 * A média móvel de 7 dias de óbitos por dia em 2021 ultrapassou o pico de óbitos em 2020
-* Nos finais de semana os casos notificados são menores do que no meio da semana
+* Existe uma sazonalidade semanal na notificação de casos novos
 * Existe uma correlação entre o número de óbitos no dia e o número de casos em dias anteriores
 
 # Modelo
-O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada para 
+O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada especificamente para previsão de séries temporais.
 
 # Conclusões
 
+A partir das análises dos dados foi possível concluir:
+
+* Em 2021, a média móvel de óbitos conseguiu superar o pico de mortes de 2020 em diversos momentos
+* Em 2021, a média móvel de casos novos também conseguiu superar o pico de casos novos de 2020
+* Existe uma sazonalidade semanal na notificação dos casos, em que no Domingo e na Segunda esses números costumam cair
+* Existe uma correlação entre os óbitos e os casos nos dias anteriores, principalmente nos mesmos dias da semana uma semana antes
+
+# Contato ☎️
+
+[<img src="https://img.shields.io/badge/pedrocorrea-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-henrique-corrêa-de-almeida/)<br>
+[<img src="https://img.shields.io/badge/GitHub-PedroHCAlmeida-DCDCDC?style=flat-square" />](https://github.com/PedroHCAlmeida)<br>
