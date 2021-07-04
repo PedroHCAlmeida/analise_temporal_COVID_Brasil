@@ -41,7 +41,7 @@ class Modelo_prophet_semanal:
     plot_cross_validation() : chama a função plot_cross_validation_metric do fbprophet.plot
     '''
     
-    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=True, pais:str='BR', regressors=[], **kwargs_model):
+    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=False, pais:str='BR', regressors=[], **kwargs_model):
         '''
         Construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
         
@@ -131,7 +131,7 @@ class Modelo_prophet_semanal:
         plt.sca(ax)
         if len(self.teste) > 0:
             plot_time_series(self.teste, title=title, subtitle=subtitle, xlabel=xlabel, ylabel=ylabel, \
-                             kwargs_lineplot = kwargs_testeplot, ax=ax, month_freq=month_freq)
+                             ax=ax, month_freq=month_freq, **kwargs_testeplot)
             plt.xticks(pd.date_range(min(self.treino['ds']), max(self.teste['ds']), freq=f'{month_freq}MS'),\
                        pd.date_range(min(self.treino['ds']), max(self.teste['ds']), freq=f'{month_freq}MS').strftime('%Y-%b'), color='#333333')
         else:
