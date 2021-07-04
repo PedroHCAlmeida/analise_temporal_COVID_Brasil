@@ -14,10 +14,13 @@ O ano de 2020 começou de uma maneira completamente inesperada, o mundo foi atin
 O repostório foi organizado em 3 pastas, são elas:
 
 ## [Dados brutos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_brutos):
+Nesta pasta se encontra o arquivo dos dados brutos extraídos do [Brasil.IO](https://brasil.io/home/) relacionados aos dados de casos e óbitos da COVID-19 no Brasil coletados a partir das secretarias estaduais de saúde.
 
 ## [Dados limpos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_limpos):
+Nesta pasta estão os dados na forma que serão utilizados na análise. Esses dados foram filtrados e tratados no notebook [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb)
 
 ## [Notebooks](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/notebooks):
+
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
 
