@@ -14,10 +14,46 @@ O ano de 2020 começou de uma maneira completamente inesperada, o mundo foi atin
 O repostório foi organizado em 3 pastas, são elas:
 
 ## [Dados brutos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_brutos):
+Nesta pasta se encontra o arquivo .csv dos dados brutos extraídos do [Brasil.IO](https://brasil.io/home/) relacionados aos dados de casos e óbitos da COVID-19 no Brasil coletados a partir das secretarias estaduais de saúde. Esses dados estão organizados em 18 colunas, são elas:
+
+* city : cidade
+* city_ibge_code : código da cidade
+* date : data das observações
+* epidemiological_week : semana epidemiológica
+* estimated_population : população estimada
+* estimated_population_2019 : população estimada de 2019
+* is_last : indica se os dados de relacionados ao last_avaiable são realmente os últimos
+* is_repeated : se os valores são repeditos
+* last_available_confirmed : última atualização do número total de casos confirmados
+* last_available_confirmed_per_100k_inhabitants : última atualização do número total de casos confirmados por 100 mil habitantes
+* last_available_date : data da última atualização
+* last_available_death_rate : última atualização da taxa de mortes
+* last_available_deaths : última atualização do número total de mortes confirmados
+* order_for_place : 
+* place_type : tipo de local, estado ou cidade
+* state : sigla do estado correspondente
+* new_confirmed : casos novos notificados no dia
+* new_deaths : óbitos novos notificados no dia
 
 ## [Dados limpos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_limpos):
+Nesta pasta está o arquivo .csv com os dados na forma que serão utilizados na análise. Esses dados foram filtrados e tratados no notebook [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb), esse arquivo está organizado em 7 colunas, são elas:
+
+* date : data relacionada ao número de casos e óbitos
+* casos_novos : número de casos notificados no dia
+* obitos_novos : número de óbitos notificados no dia
+* MM7_casos : média móvel de 7 dias dos casos novos
+* MM7_obitos : média móvel de 7 dias dos casos novos
+* mes/ano : mes e ano correspondentes
+* letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 ## [Notebooks](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/notebooks):
+Nesta pasta se encontram os notebooks desenvolvidos no jupyter:
+
+#### [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb):
+
+#### [Análise Final]():
+
+
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
 
