@@ -1,6 +1,6 @@
 # Análise Temporal COVID-19 Brasil
 
-![Alt](img/covid-19_0.jpg)
+![Alt](img/unnamed.jpg)
 
 # Introdução 📜
 
@@ -29,7 +29,7 @@ Nesta pasta se encontra o arquivo .csv dos dados brutos extraídos do [Brasil.IO
 * last_available_date : data da última atualização
 * last_available_death_rate : última atualização da taxa de mortes
 * last_available_deaths : última atualização do número total de mortes confirmados
-* order_for_place : 
+* order_for_place : número que identifica a ordem do registro para este local.
 * place_type : tipo de local, estado ou cidade
 * state : sigla do estado correspondente
 * new_confirmed : casos novos notificados no dia
@@ -77,12 +77,19 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 * Pandas versão 1.2.4 : biblioteca rápida e poderosa usada para manipulação de dados
 * Matplotlib versão 3.1.3 : biblioteca usada para visualização de dados
 * Seaborn versão 0.11.1 : biblioteca baseada no Matplotlib para visualização de gráficos estatísticos mais complexos
-* Numpy versão 1.20.2 
+* Numpy versão 1.20.2 : biblioteca utilizada para computação matemática
+* fbprophet 0.7.1 : biblioteca focada na previsão de séries temporais
 * Para mais informações de todas as versões utilizadas para replicação do projeto acesse o [requirements.txt](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/requirements.txt)
 
 # Hipóteses
 
+* A média móvel de 7 dias de casos por dia em 2021 ultrapassou o pico de casos em 2020
+* A média móvel de 7 dias de óbitos por dia em 2021 ultrapassou o pico de óbitos em 2020
+* Nos finais de semana os casos notificados são menores do que no meio da semana
+* Existe uma correlação entre o número de óbitos no dia e o número de casos em dias anteriores
+
 # Modelo
+O modelo teve como objetivo prever os números de casos novos por dia de COVID-19 no Brasil, a biblioteca fbprophet foi utilizada para 
 
 # Conclusões
 
