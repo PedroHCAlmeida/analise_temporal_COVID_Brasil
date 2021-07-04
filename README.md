@@ -77,7 +77,8 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 * Pandas versão 1.2.4 : biblioteca rápida e poderosa usada para manipulação de dados
 * Matplotlib versão 3.1.3 : biblioteca usada para visualização de dados
 * Seaborn versão 0.11.1 : biblioteca baseada no Matplotlib para visualização de gráficos estatísticos mais complexos
-* Numpy versão 1.20.2 
+* Numpy versão 1.20.2 : biblioteca utilizada para computação matemática
+* fbprophet 0.7.1 : biblioteca focada na previsão de séries temporais
 * Para mais informações de todas as versões utilizadas para replicação do projeto acesse o [requirements.txt](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/requirements.txt)
 
 # Hipóteses
