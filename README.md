@@ -13,13 +13,13 @@ O ano de 2020 começou de uma maneira completamente inesperada, o mundo foi atin
 # Estrutura do projeto
 O repostório foi organizado em 3 pastas, são elas:
 
-## [Dados brutos]():
+## [Dados brutos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_brutos):
 
-## [Dados limpos]():
+## [Dados limpos](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/dados_limpos):
 
-## [Notebooks]():
+## [Notebooks](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/notebooks):
 
-## [img]():
+## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
 
 # Hipóteses
 
