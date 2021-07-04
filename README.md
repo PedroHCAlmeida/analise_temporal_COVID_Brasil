@@ -82,6 +82,11 @@ Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através 
 
 # Hipóteses
 
+* A média móvel de 7 dias de casos por dia em 2021 ultrapassou o pico de casos em 2020
+* A média móvel de 7 dias de óbitos por dia em 2021 ultrapassou o pico de óbitos em 2020
+* Nos finais de semana os casos notificados são menores do que no meio da semana
+* Existe uma correlação entre o número de óbitos no dia e o número de casos em dias anteriores
+
 # Modelo
 
 # Conclusões
