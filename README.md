@@ -29,7 +29,7 @@ Nesta pasta se encontra o arquivo .csv dos dados brutos extraídos do [Brasil.IO
 * last_available_date : data da última atualização
 * last_available_death_rate : última atualização da taxa de mortes
 * last_available_deaths : última atualização do número total de mortes confirmados
-* order_for_place : 
+* order_for_place : número que identifica a ordem do registro para este local.
 * place_type : tipo de local, estado ou cidade
 * state : sigla do estado correspondente
 * new_confirmed : casos novos notificados no dia
