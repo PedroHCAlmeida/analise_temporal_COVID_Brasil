@@ -1,5 +1,6 @@
 # Análise Temporal COVID-19 Brasil
-
+[![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=flat-square&logo=Jupyter)](https://jupyter.org/try) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=flat-square)](https://github.com/PedroHCAlmeida/projeto_um_mal_silencioso/edit/main/LICENSE)
+![Alt text](https://veja.abril.com.br/wp-content/uploads/2017/02/hepatite-c-virus-ilustracao.jpg)
 ![Alt](img/unnamed.jpg)
 
 # Introdução 📜
@@ -99,3 +100,8 @@ A partir das análises dos dados foi possível concluir:
 * Em 2021, a média móvel de casos novos também conseguiu superar o pico de casos novos de 2020
 * Existe uma sazonalidade semanal na notificação dos casos, em que no Domingo e na Segunda esses números costumam cair
 * Existe uma correlação entre os óbitos e os casos nos dias anteriores, principalmente nos mesmos dias da semana uma semana antes
+
+# Contato ☎️
+
+[<img src="https://img.shields.io/badge/pedrocorrea-0A66C2?style=flat-square&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/pedro-henrique-corrêa-de-almeida/)<br>
+[<img src="https://img.shields.io/badge/GitHub-PedroHCAlmeida-DCDCDC?style=flat-square" />](https://github.com/PedroHCAlmeida)<br>
