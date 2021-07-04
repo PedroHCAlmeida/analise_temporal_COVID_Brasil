@@ -1,7 +1,7 @@
 from fbprophet import Prophet
 from fbprophet.plot import add_changepoints_to_plot, plot_cross_validation_metric
 from fbprophet.diagnostics import cross_validation, performance_metrics
-from plot import plot_time_series
+from plot import plot_time_series, apresentacao
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -137,12 +137,7 @@ class Modelo_prophet_semanal:
         else:
             plt.xticks(pd.date_range(min(self.treino['ds']), max(self.treino['ds']), freq=f'{month_freq}MS'),
                        pd.date_range(min(self.treino['ds']), max(self.treino['ds']), freq=f'{month_freq}MS').strftime('%Y-%b'), color='#333333')
-            plt.title(title + '\n', fontsize=25, loc='left', color='black')
-            plt.text(0,1.03, subtitle, color='gray', transform=ax.transAxes, fontsize=15)
-            plt.xlabel(xlabel, color='#333333', fontsize=15)
-            plt.ylabel(ylabel, color='#333333', fontsize=15)
-            plt.yticks(fontsize=15, color='#333333')
-            plt.grid(axis='y', alpha=0.6)
+            apresentacao(ax,title,subtitle,xlabel,ylabel)
             
         if show is True:
             plt.show()
