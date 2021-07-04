@@ -11,9 +11,10 @@ class Modelo_prophet_semanal:
     '''
     Parâmetros Construtor:
     ---------------------
-    dados : DataFrame com duas colunas de nome 'ds'(tipo datetime) e 'y'(tipo int ou float)
-    teste_periodo : número inteiro representando o número de dias destinado para o teste
-    **Kwargs_model : argumentos adicionais passados para a classe fbprophet.Prophet na hora de criar o modelo
+    dados : DataFrame com os dados de treino e teste com as colunas de data('ds') e a coluna a ser prevista('y'), tipo : pd.DataFrame
+    teste_periodo : quantidade de dias que será reservado para os dados de treino, tipo : int, padrão : 0
+    regressors : colunas adicionais que influenciam nos daods, tipo : list, padrão:[]
+    **kwargs_model : argumentos adicionais que serão passados para o modelo fbprophet.Prophet 
     
     Atributos:
     ---------
@@ -41,23 +42,20 @@ class Modelo_prophet_semanal:
     plot_cross_validation() : chama a função plot_cross_validation_metric do fbprophet.plot
     '''
     
-    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, holiday=False, pais:str='BR', regressors=[], **kwargs_model):
+    def __init__(self, dados:pd.DataFrame, teste_periodo:int=0, regressors:list=[], **kwargs_model):
         '''
         Construtor da classe que define os dados de treino, teste e o modelo como atributos do objeto
         
         Parâmetros:
         ----------
         dados : DataFrame com os dados de treino e teste com as colunas de data('ds') e a coluna a ser prevista('y'), tipo : pd.DataFrame
-        teste_periodo : quantidade de dias que será reservado para os dados de treino, tipo : int
-        pais : pais correspondente aos dados para serem adicionados os feriados, tipo : str
+        teste_periodo : quantidade de dias que será reservado para os dados de treino, tipo : int, padrão : 0
+        regressors : colunas adicionais que influenciam nos daods, tipo : list, padrão:[]
         **kwargs_model : argumentos adicionais que serão passados para o modelo fbprophet.Prophet 
         '''
         self.treino = dados[:len(dados) - teste_periodo]
         self.teste = dados[len(dados) - teste_periodo:]
         self.modelo = Prophet(daily_seasonality=False, yearly_seasonality=False, **kwargs_model)
-        
-        if holiday == True:
-            self.modelo.add_country_holidays(country_name=pais)
             
         for regressor in regressors:
             if regressor not in dados.columns:

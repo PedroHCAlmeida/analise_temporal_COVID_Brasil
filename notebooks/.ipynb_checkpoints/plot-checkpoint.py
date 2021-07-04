@@ -5,6 +5,20 @@ import pandas as pd
     
 def apresentacao(ax, title:str='', subtitle:str='', xlabel:str='', ylabel:str='', fonte:str='https://brasil.io/dataset/covid19/caso_full/', 
                  spines_invisible:list=['top', 'right'], kwargs_grid:dict={'axis':'y', 'alpha':0.6}):
+    '''
+    Função que plota as informações adicionais dos gráficos, título, subtítulo, rótulos, labels, fontes
+    
+    Parâmetros:
+    ----------
+    ax : eixo a ser plotado o gráfico, se nenhum for passado será criado automaticamnete, tipo : matplotlib.axes
+    title : título do gráfico, tipo : str, padrão : ''
+    subtitle : subtítulo do gráfico, tipo : str, padrão : ''
+    xlabel : rótulo do eixo x, tipo : str, padrão : ''
+    ylabel : rótulo do eixo y, tipo : str, padrão : ''
+    fonte : fonte dos dados para ser plotada no gráfico(embaixo), tipo : str, padrão : 'https://brasil.io/dataset/covid19/caso_full/'
+    spines_invisible : nome dos eixos a serem ocultados, tipo : list, padrão : ['top', 'right']
+    kwargs_grid : argumentos a serem passados pra função matplotlib.pyplot.grid, tipo : dict, padrão : {'axis':'y', 'alpha':0.6}
+    '''
     
     plt.sca(ax)
     plt.title(title + '\n', fontsize=25, loc='left', color='black')
