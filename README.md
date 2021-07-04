@@ -1,6 +1,6 @@
 # Análise Temporal COVID-19 Brasil
 
-![Alt](img/unnamed(2).png)
+![Alt](img/unnamed.jpg)
 
 # Introdução 📜
 
