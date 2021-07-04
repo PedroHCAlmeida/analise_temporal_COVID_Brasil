@@ -59,9 +59,11 @@ Esse notebook foi destinado à limpeza dos dados brutos a fim de agrupar os dado
 
 #### [Análise Final]():
 
-#### [model.py]()
+#### [model.py]():
 
-#### [plot.py]()
+#### [plot.py]():
+
+#### [requirements.txt](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/requirements.txt):
 
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
