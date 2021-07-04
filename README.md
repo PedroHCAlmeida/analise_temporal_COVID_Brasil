@@ -50,6 +50,12 @@ Nesta pasta está o arquivo .csv com os dados na forma que serão utilizados na 
 Nesta pasta se encontram os notebooks desenvolvidos no jupyter:
 
 #### [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb):
+Esse notebook foi destinado à limpeza dos dados brutos a fim de agrupar os dados do Brasil inteiro e organizar por dia, além disso foram renomeadas as colunas e  algumas outras foram criadas:
+
+* MM7_casos : média móvel de 7 dias dos casos novos
+* MM7_obitos : média móvel de 7 dias dos casos novos
+* mes/ano : mes e ano correspondentes
+* letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 #### [Análise Final]():
 
