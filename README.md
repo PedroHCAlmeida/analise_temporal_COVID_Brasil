@@ -47,15 +47,33 @@ Nesta pasta está o arquivo .csv com os dados na forma que serão utilizados na 
 * letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 ## [Notebooks](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/notebooks):
-Nesta pasta se encontram os notebooks desenvolvidos no jupyter:
+Nesta pasta se encontram os notebooks desenvolvidos no jupyter e os arquivos .py destinados às funções e classes:
 
 #### [Limpeza_dados_covid](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/Limpeza_dados_covid.ipynb):
+Esse notebook foi destinado à limpeza dos dados brutos a fim de agrupar os dados do Brasil inteiro e organizar por dia, além disso foram renomeadas as colunas e  algumas outras foram criadas:
+
+* MM7_casos : média móvel de 7 dias dos casos novos
+* MM7_obitos : média móvel de 7 dias dos casos novos
+* mes/ano : mes e ano correspondentes
+* letalidade_mes : número de óbitos totais do mês divididos pelo número de casos notificados no mês
 
 #### [Análise Final]():
 
+#### [model.py]()
+
+#### [plot.py]()
 
 
 ## [img](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/tree/main/img):
+Pasta destinada às imagens utilizadas no projeto.
+
+# Tecnologias utilizadas 💻
+Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através do jupyter lab versão 1.2.6, as bibliotecas usadas foram:
+* Pandas versão 1.2.4 : biblioteca rápida e poderosa usada para manipulação de dados
+* Matplotlib versão 3.1.3 : biblioteca usada para visualização de dados
+* Seaborn versão 0.11.1 : biblioteca baseada no Matplotlib para visualização de gráficos estatísticos mais complexos
+* Numpy versão 1.20.2 
+* Para mais informações de todas as versões utilizadas para replicação do projeto acesse o [requirements.txt](https://github.com/PedroHCAlmeida/analise_temporal_COVID_Brasil/blob/main/notebooks/requirements.txt)
 
 # Hipóteses
 
