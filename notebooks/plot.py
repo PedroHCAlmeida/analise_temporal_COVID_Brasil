@@ -26,10 +26,10 @@ def apresentacao(ax, title:str='', subtitle:str='', xlabel:str='', ylabel:str=''
     plt.xlabel(xlabel, color='#333333', fontsize=15)
     plt.ylabel(ylabel, color='#333333', fontsize=15)
     plt.yticks(fontsize=15, color='#333333')
+    plt.text(0,-0.1, f'fonte:{fonte}', color='gray', transform=ax.transAxes, fontsize=15)
     
     for spine in spines_invisible:
         ax.spines[spine].set_visible(False)
-    
     plt.grid(**kwargs_grid)
     
 def plot_time_series(df:pd.DataFrame, title:str='', subtitle:str='', xlabel:str='', ylabel:str='', show:bool=False, ax=None, month_freq:int=2, formatter_x=None, formatter_y=None,                   
@@ -81,13 +81,6 @@ def plot_time_series(df:pd.DataFrame, title:str='', subtitle:str='', xlabel:str=
     
     apresentacao(ax, title, subtitle, xlabel, ylabel, fonte, 
                  spines_invisible, kwargs_grid)
-    '''plt.sca(ax)
-    plt.title(title + '\n', fontsize=25, loc='left', color='black')
-    plt.text(0,1.03, subtitle, color='gray', transform=ax.transAxes, fontsize=15)
-    plt.xlabel(xlabel, color='#333333', fontsize=15)
-    plt.ylabel(ylabel, color='#333333', fontsize=15)
-    plt.yticks(fontsize=15, color='#333333')
-    plt.grid(**kwargs_grid)'''
     
     mapa={'Jan':'Jan', 'Feb':'Fev', 'Mar':'Mar', 'Apr':'Abr', 'May':'Maio', 'Jun':'Jun', 'Jul':'Jul', 'Aug':'Ago', 'Sep':'Set','Oct':'Out',
          'Nov':'Nov','Dec':'Dez'}

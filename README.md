@@ -9,7 +9,7 @@ Olá, meu nome é Pedro Henrique, e esse é meu repositório referente ao projet
 
 # COVID-19
 
-O ano de 2020 começou de uma maneira completamente inesperada, o mundo foi atingido por uma das maiores crises sanitárias da história contemporânea, fato esse que trouxe desafios e adversidades em todo o mundo, e no Brasil não foi diferente, a população viu, rapidamente, o perigo do vírus uma vez que as taxas de morte sobrem cada vez mais.Esse projeto teve como motivação os problemas causados pela COVID-19 a fim de encontrar repostas do comportamento temporal da doença. 
+O ano de 2020 começou de uma maneira completamente inesperada, o mundo foi atingido por uma das maiores crises sanitárias da história contemporânea, fato esse que trouxe desafios e adversidades em todo o mundo, e no Brasil não foi diferente, a população viu, rapidamente, o perigo do vírus uma vez que as taxas de morte sobem cada vez mais.Esse projeto teve como motivação os problemas causados pela COVID-19 a fim de encontrar respostas do comportamento temporal da doença. 
 
 # Estrutura do projeto
 O repostório foi organizado em 3 pastas, são elas:
@@ -74,7 +74,7 @@ Nesse arquivo .txt estão as versões de todas as bibliotecas que foram utilizad
 Pasta destinada às imagens utilizadas no projeto.
 
 # Tecnologias utilizadas 💻
-Esse projeto foi realizado utilizando a lingaugem Python versão 3.7.6 através do jupyter lab versão 1.2.6, as bibliotecas usadas foram:
+Esse projeto foi realizado utilizando a linguagem Python versão 3.7.6 através do jupyter lab versão 1.2.6, as bibliotecas usadas foram:
 * Pandas versão 1.2.4 : biblioteca rápida e poderosa usada para manipulação de dados
 * Matplotlib versão 3.1.3 : biblioteca usada para visualização de dados
 * Seaborn versão 0.11.1 : biblioteca baseada no Matplotlib para visualização de gráficos estatísticos mais complexos
