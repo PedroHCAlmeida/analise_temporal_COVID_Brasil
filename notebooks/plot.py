@@ -89,8 +89,6 @@ def plot_time_series(df:pd.DataFrame, title:str='', subtitle:str='', xlabel:str=
                pd.date_range(min(df['date']), max(df['date']), freq=f'{month_freq}MS').strftime('%Y-%b').map(func), 
                color='#333333', fontsize=15)
     
-    plt.text(0,-0.1, f'fonte:{fonte}', color='gray', transform=ax.transAxes, fontsize=15)
-    
     if formatter_x != None:
         ax.xaxis.set_major_formatter(formatter_x)
     
