@@ -201,7 +201,6 @@ pyasn1-modules==0.2.8
 pycodestyle @ file:///tmp/build/80754af9/pycodestyle_1615748559966/work
 pycosat==0.6.3
 pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
-pycrypto==2.6.1
 pycurl==7.43.0.6
 pydocstyle @ file:///tmp/build/80754af9/pydocstyle_1621600989141/work
 pyerfa @ file:///C:/ci/pyerfa_1621560986234/work
